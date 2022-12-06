@@ -9,8 +9,8 @@
 <section class="py-5 mt-5 bg-light">
     <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-black">
-            <h1 class="display-4 fw-bolder">Special Items</h1>
-            <p class="lead fw-normal text-black-50 mb-0">Produk terbaik dengan harga terbaik juga ygy</p>
+            <h1 class="display-4 fw-bolder">Nikmati Kenyamanan dan Keramahan dengan Barbershop Kami</h1>
+            <p class="lead fw-normal text-black-50 mb-0">Mantappu Jiwa</p>
         </div>
     </div>
 </section>
@@ -27,12 +27,4 @@
 {{-- Footer --}}
 @include('frontpage.layouts.footer')
 {{-- AOS --}}
-<script>
-    function playMusic(){
-    var music = new Audio('/music/music-2.mp3');
-    music.play();
-    }
-</script>
-
-
 @endsection

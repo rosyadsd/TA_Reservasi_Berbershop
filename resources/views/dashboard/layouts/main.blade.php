@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Astrodyy Store</title>
+        <title>Barbershop Rosyad</title>
         <link rel="icon" type="image/x-icon" href="/images/soviet.png" />
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="/css/dashboard.css" rel="stylesheet" />

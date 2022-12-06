@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Handphone;
+use App\Models\Paket;
 use App\Models\Toko;
-use App\Models\Invoice;
+use App\Models\Reservasi;
+use App\Models\Barber;
 use Illuminate\Http\Request;
 
 class FrontpageController extends Controller
@@ -15,36 +16,38 @@ class FrontpageController extends Controller
 
     public function product(){
         // return view('frontpage.pages.product', [
-        //     'handphones' => Handphone::paginate(8)
+        //     'pakets' => Paket::paginate(8)
         // ]);
-        if(request('merk_hp')){
-            $merk_hp = Handphone::firstWhere('merk_hp', request('merk_hp'));
+        if(request('nama_paket')){
+            $nama_paket = Paket::firstWhere('nama_paket', request('nama_paket'));
         }
 
-        if(request('tipe_hp')){
-            $tipe_hp = Handphone::firstWhere('merk_hp', request('merk_hp'));
+        if(request('keterangan_paket')){
+            $keterangan_paket = Paket::firstWhere('nama_paket', request('nama_paket'));
         }
         return view("frontpage.pages.product", [
-            "handphones" => Handphone::latest()->filter(request(['search','tipe_hp','merk_hp']))->paginate(8)->withQueryString()
+            "pakets" => Paket::latest()->filter(request(['search','keterangan_paket','nama_paket']))->paginate(8)->withQueryString()
         ]);
     }
 
     public function showProduct(Request $request){
-        $handphones = Handphone::all();
+        $pakets = Paket::all();
         if($request->keyword != ''){
-            $handphones = Handphone::where('tipe_hp','LIKE','%'.$request->keyword.'%')->get();
+            $pakets = Paket::where('keterangan_paket','LIKE','%'.$request->keyword.'%')->get();
         }
         return response()->json([
-            'handphones' => $handphones
+            'pakets' => $paket
         ]);
     }
     
     public function beliProduk(Request $request){
         $validatedData = $request->validate([
-            'merk_hp' => ['required'],
-            'tipe_hp' => ['required'],
-            'nama_pembeli' => ['required'],
-            'nohp_pembeli' => ['required'],
+            'nama_paket' => ['required'],
+            'keterangan_paket' => ['required'],
+            'nama_pelanggan' => ['required'],
+            'no_pelanggan' => ['required'],
+            'nama_barber' => ['required', 'max:255'],
+            'jam_potong' => ['required', 'max:255'],
             'harga' => ['required']
         ]);
 

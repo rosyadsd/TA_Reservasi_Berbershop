@@ -3,22 +3,22 @@
 <div id="layoutSidenav_content">
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Rejected Invoice</h1>
+        <h1 class="mt-4">Penolakan Reservasi</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active">Dashboard</li>
         </ol>
 
         <div class="table-responsive col-lg-12">
             <div class="card mb-4">
-                <div class="card-header">Rejected Invoices</div>
+                <div class="card-header">Penolakan Reservasi</div>
                 <div class="card-body">
                     <table class="table table-bordered table-sm" id="recycle-table">
                         <thead>
                             <tr>
                             <th scope="col"># </th>
-                            <th scope="col">No. Invoice</th>
+                            <th scope="col">No. Reservasi</th>
                             <th scope="col">Disetujui Oleh</th>
-                            <th scope="col">Tanggal Pembelian</th>
+                            <th scope="col">Tanggal Pemesanan</th>
                             <th scope="col">Tanggal Dihapus</th>
                             <th scope="col" class="text-center">Aksi</th>
                             </tr>

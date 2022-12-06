@@ -13,7 +13,7 @@ class LoginController extends Controller
 
     public function authenticate(Request $request){
         $credentials = $request->validate([
-            'nohp_karyawan' => ['required'],
+            'nohp_admin' => ['required'],
             'password' => ['required']
         ]);
 

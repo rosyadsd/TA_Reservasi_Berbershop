@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Invoice;
+use App\Models\Reservasi;
 
 class DashboardFakturController extends Controller
 {
@@ -11,29 +11,29 @@ class DashboardFakturController extends Controller
     public function index()
     {
         return view('dashboard.faktur.index', [
-            'fakturs' => Invoice::where('isApprove', 1)->get()
+            'fakturs' => Reservasi::where('isApprove', 1)->get()
         ]);
     }
 
-    public function destroy(Invoice $invoice)
+    public function destroy(Reservasi $reservasi)
     {
-        Invoice::find($invoice->id)->delete();
+        Reservasi::find($reservasi->id)->delete();
         return redirect('/dashboard/fakturs');
     }
 
     public function recycle(){
         return view('dashboard.faktur.recycle', [
-            'fakturs' => Invoice::onlyTrashed()->where('isApprove', 1)->get()
+            'fakturs' => Reservasi::onlyTrashed()->where('isApprove', 1)->get()
         ]);
     }
 
-    public function restore($invoiceId){
-        Invoice::onlyTrashed()->where('isApprove', 1)->find($invoiceId)->restore();
+    public function restore($reservasiId){
+        Reservasi::onlyTrashed()->where('isApprove', 1)->find($reservasiId)->restore();
         return redirect('/dashboard/fakturs/recycle');
     }
 
-    public function delete($invoiceId){
-        Invoice::onlyTrashed()->where('isApprove', 1)->find($invoiceId)->forceDelete();
+    public function delete($reservasiId){
+        Reservasi::onlyTrashed()->where('isApprove', 1)->find($reservasiId)->forceDelete();
         return redirect('/dashboard/fakturs/recycle');
     }
 }

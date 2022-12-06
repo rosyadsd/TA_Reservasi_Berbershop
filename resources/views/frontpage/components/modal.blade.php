@@ -1,36 +1,48 @@
 <!-- Modal -->
-<div class="modal fade" id="beliModal{{ $handphone->id }}" tabindex="-1" aria-labelledby="beliProduk" aria-hidden="true">
+<div class="modal fade" id="beliModal{{ $paket->id }}" tabindex="-1" aria-labelledby="beliProduk" aria-hidden="true">
 <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
     <div class="modal-header">
-        <h5 class="modal-title" id="beliProduk">Beli Handphone</h5>
+        <h5 class="modal-title" id="beliProduk">Pesan Reservasi</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
-      <form action="/dashboard/invoices" method="POST">
+      <form action="/dashboard/reservasis" method="POST">
         @csrf
         <div class="mb-3">
-            <label for="merk_hp" class="form-label">Merk Handphone</label>
-            <input type="text" class="form-control" id="merk_hp" aria-describedby="merk_hp" name="merk_hp" value="{{ $handphone->merk_hp }}" readonly>
+            <label for="nama_paket" class="form-label">Paket Barber</label>
+            <input type="text" class="form-control" id="nama_paket" aria-describedby="nama_paket" name="nama_paket" value="{{ $paket->nama_paket }}" readonly>
           </div>
           <div class="mb-3">
-            <label for="tipe_hp" class="form-label">Tipe Handphone</label>
-            <input type="text" class="form-control" id="tipe_hp" aria-describedby="tipe_hp" name="tipe_hp" value="{{ $handphone->tipe_hp }}" readonly>
+            <label for="keterangan_paket" class="form-label">Keterangan Dari Paket</label>
+            <input type="text" class="form-control" id="keterangan_paket" aria-describedby="keterangan_paket" name="keterangan_paket" value="{{ $paket->keterangan_paket }}" readonly>
           </div>
           <div class="mb-3">
-            <label for="harga" class="form-label">Harga</label>
-            <input type="text" class="form-control" id="harga" aria-describedby="harga" name="harga" value="{{ $handphone->harga }}" readonly>
+            <label for="harga" class="form-label">Harga dari paket</label>
+            <input type="text" class="form-control" id="harga" aria-describedby="harga" name="harga" value="{{ $paket->harga }}" readonly>
           </div>
           <div class="mb-3">
-            <label for="nama_pembeli" class="form-label">Nama Pembeli</label>
-            <input type="text" class="form-control" id="nama_pembeli" aria-describedby="nama_pembeli" name="nama_pembeli" required>
+            <label for="nama_pelanggan" class="form-label">Nama Pemesan</label>
+            <input type="text" class="form-control" id="nama_pelanggan" aria-describedby="nama_pelanggan" name="nama_pelanggan" required>
           </div>
           <div class="mb-3">
-            <label for="nohp_pembeli" class="form-label">No Hp Pembeli</label>
-            <input type="text" class="form-control" id="nohp_pembeli" aria-describedby="nohp_pembeli" name="nohp_pembeli" required>
+            <label for="no_pelanggan" class="form-label">No Hp Pembeli</label>
+            <input type="text" class="form-control" id="no_pelanggan" aria-describedby="no_pelanggan" name="no_pelanggan" required>
+          </div>
+          <div class="mb-3">
+            <label for="nama_barber" class="form-label">Pilih Barber</label>
+            <select class="form-control" id="nama_barber" aria-describedby="nama_barber" name="nama_barber" required>
+              <option value="Fawwaz">Fawwaz</option>
+              <option value="Rafael">Rafael</option>
+              <option value="Yudi">Yudi</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="jam_potong" class="form-label">Waktu Potong</label>
+            <input type="text" class="form-control" id="jam_potong" aria-describedby="jam_potong" name="jam_potong" required>
           </div>
           <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">Beli Produk</button>
+              <button type="submit" class="btn btn-primary">Pesan Reservasi</button>
               {{-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> --}}
           </div>
     </form>

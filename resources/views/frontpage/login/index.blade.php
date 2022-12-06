@@ -5,15 +5,15 @@
 		<div class="wrap-login100">
 			<div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
 				<span class="login100-form-title-1">
-					Login Karyawan
+					Login Admin
 				</span>
 			</div>
 
 			<form class="login100-form validate-form" method="POST" action="/login">
 				@csrf
 				<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-					<span class="label-input100">No Hp</span>
-					<input class="input100" type="text" name="nohp_karyawan" id="nohp_karyawan" placeholder="Masukan No Hp">
+					<span class="label-input100">No.hp Admin</span>
+					<input class="input100" type="text" name="nohp_admin" id="nohp_admin" placeholder="Masukan No Hp">
 					<span class="focus-input100"></span>
 				</div>
 

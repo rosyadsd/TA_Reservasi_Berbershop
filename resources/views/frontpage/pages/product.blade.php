@@ -1,15 +1,15 @@
 @extends('frontpage.layouts.main')
 @section('container')
-<h2 class="mb-3 mt-3 fw-bold text-center">Smartphone</h2>
+<h2 class="mb-3 mt-3 fw-bold text-center">Pilihan Paket Barbershop</h2>
 
 <div class="row justify-content-center mb-3">
     <div class="col-md-6">
         <form action="/product" method="GET">
-            @if(request('merk_hp'))
-                <input type="hidden" name="merk_hp" value="{{ request('merk_hp') }}">
+            @if(request('nama_paket'))
+                <input type="hidden" name="nama_paket" value="{{ request('nama_paket') }}">
             @endif
-            @if(request('tipe_hp'))
-                <input type="hidden" name="tipe_hp" value="{{ request('tipe_hp') }}">
+            @if(request('keterangan_paket'))
+                <input type="hidden" name="keterangan_paket" value="{{ request('keterangan_paket') }}">
             @endif
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Search.." name="search" value={{ request('search') }}>
@@ -21,8 +21,8 @@
 
 <div class="container">
     <div class="row">
-        @foreach($handphones as $handphone)
-            @if($handphone->id %2 !== 0)
+        @foreach($pakets as $paket)
+            @if($paket->id %2 !== 0)
                 <div class="col">
                     @include('frontpage.components.card')
                     @include('frontpage.components.modal')
@@ -31,8 +31,8 @@
         @endforeach
     </div>
     <div class="row">
-        @foreach($handphones as $handphone)
-            @if($handphone->id %2 === 0)
+        @foreach($pakets as $paket)
+            @if($paket->id %2 === 0)
                 <div class="col">
                     @include('frontpage.components.card')
                     @include('frontpage.components.modal')
@@ -43,7 +43,7 @@
 </div>
 
 <div class="d-flex justify-content-center mb-3">
-    {{ $handphones->links() }}
+    {{ $pakets->links() }}
 </div>
 
 <script type="text/javascript">

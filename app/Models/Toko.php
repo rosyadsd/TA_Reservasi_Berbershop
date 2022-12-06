@@ -12,6 +12,6 @@ class Toko extends Model
     protected $guarded = ['id'];
 
     public function invoice() {
-        return $this->hasMany(Invoice::class, 'id');
+        return $this->hasMany(Reservasi::class, 'id');
     }
 }

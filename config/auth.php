@@ -4,21 +4,21 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'karyawans',
+        'passwords' => 'admins',
     ],
 
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'karyawans',
+            'provider' => 'admins',
         ],
     ],
 
 
     'providers' => [
-        'karyawans' => [
+        'admins' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Karyawan::class,
+            'model' => App\Models\Admin::class,
         ],
 
         // 'users' => [
@@ -28,8 +28,8 @@ return [
     ],
 
     'passwords' => [
-        'karyawans' => [
-            'provider' => 'karyawans',
+        'admins' => [
+            'provider' => 'admins',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
